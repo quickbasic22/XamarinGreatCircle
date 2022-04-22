@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinGreatCircle.Views.DegreesToRadians">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Degrees to Radians"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="LatRadians1" Text="28.88138889" />
+            <Entry x:Name="LongRadians1" Text="-81.7033333" />
+            <Entry x:Name="LatRadians2" Text="29.88138889" />
+            <Entry x:Name="LongRadians2" Text="-81.7033333" />
+            <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
+            <Line />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
