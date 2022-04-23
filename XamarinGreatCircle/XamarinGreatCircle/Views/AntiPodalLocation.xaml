@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinGreatCircle.Views.AntiPodalLocation">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label Text="Antipodal Locations" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+                </Frame>
+                <Entry x:Name="LatDeg1" Text="28" />
+                <Entry x:Name="LatMin1" Text="52" />
+                <Entry x:Name="LatSec1" Text="50" />
+                <Entry x:Name="LongDeg2" Text="-81" />
+                <Entry x:Name="LongMin2" Text="42" />
+                <Entry x:Name="LongSec2" Text="12" />
+                <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
+                <Line X1="0" Y1="50" X2="400" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
+                <Entry x:Name="AntipodalResult" Text="Results" Placeholder="Latitude Longitude result" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

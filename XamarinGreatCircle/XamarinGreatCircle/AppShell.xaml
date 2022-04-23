@@ -32,6 +32,8 @@
     <TabBar>
         <ShellContent Title="GreatCircle" Icon="icon_about.png" Route="GreatCircle" ContentTemplate="{DataTemplate local:GreatCircle}" />
         <ShellContent Title="Degrees to Radians" Icon="icon_about.png" Route="DegreesToRadians" ContentTemplate="{DataTemplate local:DegreesToRadians}" />
+        <ShellContent Title="Antipodal Locations" Icon="icon_about.png" Route="AntiPodalLocation" ContentTemplate="{DataTemplate local:AntiPodalLocation}" />
+        <ShellContent Title="Map" Icon="icon_about.png" Route="Map" ContentTemplate="{DataTemplate local:Map}" />
     </TabBar>
 
     <!--

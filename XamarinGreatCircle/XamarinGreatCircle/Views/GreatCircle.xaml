@@ -4,17 +4,16 @@
              x:Class="XamarinGreatCircle.Views.GreatCircle">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Great Circle Calculator"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label Text="Great Circle Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+            </Frame>
             <Entry x:Name="Latitude1" Text="28.88138889" />
             <Entry x:Name="Longitude1" Text="-81.7033333" />
             <Entry x:Name="Latitude2" Text="29.88138889" />
             <Entry x:Name="Longitude2" Text="-81.7033333" />
             <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line />
+            <Line Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" />
             <Entry x:Name="Result" Placeholder="Results here" />
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinGreatCircle.Views.DegreesToRadians">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Degrees to Radians"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label Text="Degrees to Radians" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+            </Frame>
             <Entry x:Name="LatRadians1" Text="28.88138889" />
             <Entry x:Name="LongRadians1" Text="-81.7033333" />
             <Entry x:Name="LatRadians2" Text="29.88138889" />
             <Entry x:Name="LongRadians2" Text="-81.7033333" />
             <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line />
+            <Line X1="0" Y1="400" X2="100" Y2="400" Stroke="DarkBlue" StrokeThickness="10" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

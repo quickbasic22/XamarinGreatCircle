@@ -12,6 +12,8 @@ namespace XamarinGreatCircle
             InitializeComponent();
             Routing.RegisterRoute(nameof(GreatCircle), typeof(GreatCircle));
             Routing.RegisterRoute(nameof(DegreesToRadians), typeof(DegreesToRadians));
+            Routing.RegisterRoute(nameof(AntiPodalLocation), typeof(AntiPodalLocation));
+            Routing.RegisterRoute(nameof(Map), typeof(Map));
 
         }
 
