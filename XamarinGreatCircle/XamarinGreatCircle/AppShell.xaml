@@ -34,6 +34,9 @@
         <ShellContent Title="Degrees to Radians" Icon="icon_about.png" Route="DegreesToRadians" ContentTemplate="{DataTemplate local:DegreesToRadians}" />
         <ShellContent Title="Antipodal Locations" Icon="icon_about.png" Route="AntiPodalLocation" ContentTemplate="{DataTemplate local:AntiPodalLocation}" />
         <ShellContent Title="Map" Icon="icon_about.png" Route="Map" ContentTemplate="{DataTemplate local:Map}" />
+        <ShellContent Title="DMS to Degrees" Icon="icon_about.png" Route="DMS_Degrees" ContentTemplate="{DataTemplate local:DMS_Degrees}" />
+        <ShellContent Title="Deg_DMS" Icon="icon_about.png" Route="Deg_DMS" ContentTemplate="{DataTemplate local:Deg_DMS}" />
+        <ShellContent Title="Radians_DD" Icon="icon_about.png" Route="Radians_DD" ContentTemplate="{DataTemplate local:Radians_DD}" />
     </TabBar>
 
     <!--

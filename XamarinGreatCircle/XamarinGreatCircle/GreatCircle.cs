@@ -10,12 +10,10 @@ namespace XamarinGreatCircle
     { 
         public double DMS_Degrees(double deg, double min, double sec)
         {
-            double Min = min / 60;
-            double Sec = sec / 3600;
-            double Deg = deg * Math.Sign(deg);
-            double Degrees = Deg + Min + Sec;
-            double Negation = Math.Sin(Deg);
-            return (Degrees * Negation);
+            double answer = deg + (min / 60) + (sec / 3600);
+            if (deg < 0)
+                answer -= 1;
+            return answer;
         }
         public double Deg_Radians(double deg)
         {
@@ -41,7 +39,7 @@ namespace XamarinGreatCircle
             double MinDecimalPart = Min - Math.Truncate(Min);
             double MinIntegerPart = Math.Truncate(Min);
             double Sec = Math.Round(MinDecimalPart * 60, 0);
-            double IntegerWithSign = Math.Sign(Deg) * IntegerPart;
+            double IntegerWithSign = Negation * IntegerPart;
             string result = $"{IntegerWithSign} {MinIntegerPart} {Sec}";
             return result;
         }
@@ -81,6 +79,9 @@ namespace XamarinGreatCircle
             double Lat = DMS_Degrees(latdeg, latmin, latsec);
             double Long = DMS_Degrees(longdeg, longmin, longsec);
             Lat = -Lat;
+            if (Long < 0)
+                Long = Long - 180;
+            else
             Long = Long + 180;
             return new double[] { Lat, Long };
         }

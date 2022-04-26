@@ -9,10 +9,10 @@
             <Entry x:Name="EntryName" />
 
             <Label Text="Latitude" Margin="0, 24, 0, 0" />
-            <Entry Keyboard="Numeric" Text="47.603230" x:Name="EntryLatitude" />
+            <Entry Keyboard="Numeric" Text="{Binding CoorLat}" Placeholder="Latitude"  x:Name="EntryLatitude" />
 
             <Label Text="Longitude" />
-            <Entry Keyboard="Numeric" Text="-122.330276" x:Name="EntryLongitude" />
+            <Entry Keyboard="Numeric" Text="{Binding CoorLong}" Placeholder="Longitude" x:Name="EntryLongitude" />
             <Button Text="Open Cooridates" x:Name="ButtonOpenCoords" Clicked="ButtonOpenCoords_Clicked" />
         </StackLayout>
     </ContentPage.Content>

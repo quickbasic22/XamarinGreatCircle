@@ -29,7 +29,15 @@ namespace XamarinGreatCircle.Views
             double longsec2 = double.Parse(LongSec2.Text);
 
             double[] result = GreatCircle.Get_AntiPodal(latdeg1, latmin1, latsec1, longdeg2, longmin2, longsec2);
-            AntipodalResult.Text = String.Format("Latitude {0} Longitude {1} size {0}", result[0], result[1], result.Count());
+            AntipodalLat.Text = String.Format("Latitude {0}", result[0].ToString());
+            AntipodalLong.Text = String.Format("Longitude {0}", result[1].ToString());
+            double resultlat = result[0];
+            double resultlong = result[1];
+
+
+            Shell.Current.GoToAsync($"{nameof(Map)}?{nameof(ViewModels.MapViewModel.CoorLat)}={resultlat}&{nameof(ViewModels.MapViewModel.CoorLong)}={resultlong}");
+            
+
 
         }
     }

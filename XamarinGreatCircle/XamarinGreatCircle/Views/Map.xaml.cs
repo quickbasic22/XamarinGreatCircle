@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using System.ComponentModel;
 
 namespace XamarinGreatCircle.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class Map : ContentPage
     {
+        
         public Map()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.MapViewModel();
         }
 
         private async void ButtonOpenCoords_Clicked(object sender, EventArgs e)
@@ -24,7 +28,11 @@ namespace XamarinGreatCircle.Views
             if (!double.TryParse(EntryLongitude.Text, out double lng))
                 return;
 
-            await Xamarin.Essentials.Map.OpenAsync(lat, lng, new MapLaunchOptions
+           double MilesinMeters = Xamarin.Essentials.UnitConverters.MilesToMeters(2000.0);
+
+            Location Eustis = new Location(lat, lng, MilesinMeters);
+            
+            await Xamarin.Essentials.Map.OpenAsync(Eustis, new MapLaunchOptions
             {
                 Name = EntryName.Text,
                 NavigationMode = NavigationMode.None
