@@ -9,7 +9,7 @@
             </Frame>
             <Entry x:Name="HeightInFeet" Text="35000" FontSize="Large" />
             <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" FontSize="Large" />
-            <Line X1="0" Y1="400" X2="100" Y2="400" Stroke="DarkBlue" StrokeThickness="10" />
+           
             <Label x:Name="ResultsLabel" FontSize="Large" FontFamily="Arial" />
         </StackLayout>
     </ContentPage.Content>

@@ -27,6 +27,8 @@ namespace XamarinGreatCircle.Views
             double resultlong = GreatCircle.Radians_Deg(longdegrees);
             EntryDegLat.Text = resultlat.ToString();
             EntryDegLong.Text = resultlong.ToString();
+
+            Xamarin.Essentials.Clipboard.SetTextAsync(EntryDegLat.Text + " " + EntryDegLong.Text);
         }
     }
 }

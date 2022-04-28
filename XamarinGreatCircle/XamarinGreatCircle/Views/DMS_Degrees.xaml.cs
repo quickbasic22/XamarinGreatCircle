@@ -31,6 +31,8 @@ namespace XamarinGreatCircle.Views
             double long1result = gc.DMS_Degrees(longDeg1, longMin1, longSec1);
             EntryLat.Text = $"latitude is {lat1result.ToString()}";
             EntryLong.Text = $"longitude is {long1result.ToString()}";
+
+            Xamarin.Essentials.Clipboard.SetTextAsync(EntryLat.Text + " " + EntryLong.Text);
         }
     }
 }

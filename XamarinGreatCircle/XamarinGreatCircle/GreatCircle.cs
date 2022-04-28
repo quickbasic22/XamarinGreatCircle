@@ -54,15 +54,16 @@ namespace XamarinGreatCircle
             result = Math.Round(result, 1);
             return result;
         }
-        public string ViewableMileage_AtHeight(double height)
+        public string ViewableMileage_AtHeight(double heightFeet)
         {
             Console.WriteLine("Height above earth in feet");
 
             //double height = double.Parse(Console.ReadLine());
-            height = (height / 5280) + 3959;
-            double angle = (Math.Asin((3959 / height)) * (180 * Math.PI));
-            angle = Math.Round(angle * 2, 1);
-            double answer = Math.Round(180 - angle, 1);
+            double heightMiles = 0;
+            heightMiles = (heightFeet / 5280) + 3959;
+            double angleDegrees = (Math.Asin((3959 / heightMiles)) * (180 / Math.PI));
+            angleDegrees = Math.Round(angleDegrees * 2, 1);
+            double answer = Math.Round(180 - angleDegrees, 1);
             double visible = Math.PI * 2 * answer;
             //Console.WriteLine($"Viewing {answer} degrees of 360 in two directions");
             double EarthCircumference = Math.PI * 3959 * 2;
@@ -84,6 +85,26 @@ namespace XamarinGreatCircle
             else
             Long = Long + 180;
             return new double[] { Lat, Long };
+        }
+
+        public double GetDistantThroughEarth(double latDeg, double lngDeg, double latDeg2, double lngDeg2)
+        {
+            double lat1Radians = Deg_Radians(latDeg);
+            double lng1Radians = Deg_Radians(lngDeg);
+            double lat2Radians = Deg_Radians(latDeg2);
+            double lng2Radians = Deg_Radians(lngDeg2);
+
+            double X = Math.Cos(lat1Radians) * Math.Cos(lng1Radians);
+            double Y = Math.Cos(lat1Radians) * Math.Sin(lng1Radians);
+            double Z = Math.Sin(lat1Radians);
+
+            double X2 = Math.Cos(lat2Radians) * Math.Cos(lng2Radians);
+            double Y2 = Math.Cos(lat2Radians) * Math.Sin(lng2Radians);
+            double Z2 = Math.Sin(lat2Radians);
+
+            double result = Math.Sqrt(Math.Pow((X2 - X), 2) + Math.Pow((Y2 - Y), 2) + Math.Pow((Z2 - Z), 2));
+            result = result * 3959;
+            return result;
         }
     }
 }

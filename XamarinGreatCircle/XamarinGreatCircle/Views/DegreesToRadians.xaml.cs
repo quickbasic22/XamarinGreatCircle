@@ -33,6 +33,8 @@ namespace XamarinGreatCircle.Views
             LongRadians1.Text = long2result.ToString();
             LatRadians2.Text = lat2result.ToString();
             LongRadians2.Text = long2result.ToString();
+
+            Xamarin.Essentials.Clipboard.SetTextAsync(LatRadians1.Text + " " + LongRadians1.Text + Environment.NewLine + LatRadians2.Text + " " + LongRadians2.Text);
         }
 
     }

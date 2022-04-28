@@ -13,7 +13,6 @@
             <Entry x:Name="LatRadians2" Text="29.88138889" />
             <Entry x:Name="LongRadians2" Text="-81.7033333" />
             <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line X1="0" Y1="400" X2="100" Y2="400" Stroke="DarkBlue" StrokeThickness="10" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
