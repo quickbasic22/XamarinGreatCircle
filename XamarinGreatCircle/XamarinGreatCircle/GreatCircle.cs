@@ -54,24 +54,24 @@ namespace XamarinGreatCircle
             result = Math.Round(result, 1);
             return result;
         }
-        public void ViewableMileage_AtHeight()
+        public string ViewableMileage_AtHeight(double height)
         {
             Console.WriteLine("Height above earth in feet");
 
-            double height = double.Parse(Console.ReadLine());
+            //double height = double.Parse(Console.ReadLine());
             height = (height / 5280) + 3959;
             double angle = (Math.Asin((3959 / height)) * (180 * Math.PI));
             angle = Math.Round(angle * 2, 1);
             double answer = Math.Round(180 - angle, 1);
             double visible = Math.PI * 2 * answer;
-            Console.WriteLine($"Viewing {answer} degrees of 360 in two directions");
+            //Console.WriteLine($"Viewing {answer} degrees of 360 in two directions");
             double EarthCircumference = Math.PI * 3959 * 2;
             double arch = answer / 360;
             answer = arch * EarthCircumference;
             answer = Math.Round(answer / 2, 0);
-            Console.WriteLine($"visible part {answer} miles in one direction.");
-            Console.ReadKey();
-
+            // Console.WriteLine($"visible part {answer} miles in one direction.");
+            //Console.ReadKey();
+            return answer.ToString();
 
         }
         public double[] Get_AntiPodal(double latdeg, double latmin, double latsec, double longdeg, double longmin, double longsec)
@@ -79,7 +79,7 @@ namespace XamarinGreatCircle
             double Lat = DMS_Degrees(latdeg, latmin, latsec);
             double Long = DMS_Degrees(longdeg, longmin, longsec);
             Lat = -Lat;
-            if (Long < 0)
+            if (Long > 0 && Long < 360)
                 Long = Long - 180;
             else
             Long = Long + 180;

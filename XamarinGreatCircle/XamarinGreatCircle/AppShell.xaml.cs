@@ -17,6 +17,8 @@ namespace XamarinGreatCircle
             Routing .RegisterRoute(nameof(DMS_Degrees), typeof(DMS_Degrees));
             Routing.RegisterRoute(nameof(Deg_DMS), typeof(Deg_DMS));
             Routing.RegisterRoute(nameof(Radians_DD), typeof(Radians_DD));
+            Routing.RegisterRoute(nameof(ViewableMileage_AtHeight), typeof(ViewableMileage_AtHeight));
+
         }
 
     }

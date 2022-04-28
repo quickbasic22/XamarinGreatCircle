@@ -37,6 +37,7 @@
         <ShellContent Title="DMS to Degrees" Icon="icon_about.png" Route="DMS_Degrees" ContentTemplate="{DataTemplate local:DMS_Degrees}" />
         <ShellContent Title="Deg_DMS" Icon="icon_about.png" Route="Deg_DMS" ContentTemplate="{DataTemplate local:Deg_DMS}" />
         <ShellContent Title="Radians_DD" Icon="icon_about.png" Route="Radians_DD" ContentTemplate="{DataTemplate local:Radians_DD}" />
+        <ShellContent Title="ViewableMileage_AtHeight" Route="ViewableMileage_AtHeight" ContentTemplate="{DataTemplate local:ViewableMileage_AtHeight}" />
     </TabBar>
 
     <!--
