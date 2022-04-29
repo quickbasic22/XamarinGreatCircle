@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:XamarinGreatCircle.ViewModels" 
+             x:DataType="viewmodels:GreatCircleViewModel"
              x:Class="XamarinGreatCircle.Views.GreatCircle">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
-                <Label Text="Great Circle Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
-            </Frame>
-            <Entry x:Name="Latitude1" Text="28.88138889" />
-            <Entry x:Name="Longitude1" Text="-81.7033333" />
-            <Entry x:Name="Latitude2" Text="29.88138889" />
-            <Entry x:Name="Longitude2" Text="-81.7033333" />
-            <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" />
-            <Entry x:Name="Result" Placeholder="Results here" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label Text="Great Circle Calculator" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+                </Frame>
+                <Label x:Name="Location1" Text="" FontSize="Large" TextColor="Blue" BackgroundColor="AliceBlue" />
+                <Entry x:Name="Latitude1" Text="" Placeholder="Departure Latitude" />
+                <Entry x:Name="Longitude1" Text="" Placeholder="Departure Longitude" />
+                <Label x:Name="Location2" Text="" FontSize="Large" TextColor="Blue" BackgroundColor="AliceBlue" />
+                <Entry x:Name="Latitude2" Text="" Placeholder="Destination Latitude" />
+                <Entry x:Name="Longitude2" Text="" Placeholder="Destination Longitude" />
+                <Button x:Name="Calculate" Text="Calculate" FontSize="Large" TextColor="Purple" Clicked="Calculate_Clicked" />
+                <Line Stroke="DarkBlue" StrokeDashArray="1,1" StrokeDashOffset="6" />
+                <Entry x:Name="Result" Placeholder="Results here" />
+                <Picker x:Name="LocationPicker" Title="Pick Location from list" TextColor="Blue" BackgroundColor="LightPink" TitleColor="Purple" ItemsSource="{Binding LocationInformation}" ItemDisplayBinding="{Binding Name}" FontSize="Large" SelectedIndexChanged="LocationPicker_SelectedIndexChanged" />
+                <Button x:Name="ClearTextButton" Text="Clear Text" FontSize="Small" TextColor="YellowGreen" Clicked="ClearTextButton_Clicked" WidthRequest="100" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,6 +17,7 @@ namespace XamarinGreatCircle.Views
         public Deg_DMS()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.Deg_DMS_ViewModel();
             GreatCircle = new XamarinGreatCircle.GreatCircle();
         }
 
@@ -31,5 +32,18 @@ namespace XamarinGreatCircle.Views
 
             Xamarin.Essentials.Clipboard.SetTextAsync(EntryLat.Text + " " + EntryLong.Text);
         }
+        
+        private void LocationPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender as Picker;
+            var location = (Model.LocationInfo)picker.SelectedItem;
+
+            
+            EntryLatDegrees.Text = location.Latitude.ToString();
+            EntryLongDegrees.Text = location.Longitude.ToString();
+
+            Calculate_Clicked(this, null);
+        }
+
     }
 }

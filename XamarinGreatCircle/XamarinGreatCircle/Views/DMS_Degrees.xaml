@@ -4,7 +4,7 @@
              x:Class="XamarinGreatCircle.Views.DMS_Degrees">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="20">
                 <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
                     <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
                 </Frame>

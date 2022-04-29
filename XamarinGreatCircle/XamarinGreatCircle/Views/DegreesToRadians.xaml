@@ -4,7 +4,7 @@
              x:Class="XamarinGreatCircle.Views.DegreesToRadians">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
                 <Label Text="Degrees to Radians" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
             </Frame>

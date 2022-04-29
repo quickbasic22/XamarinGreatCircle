@@ -4,10 +4,11 @@
              x:Class="XamarinGreatCircle.Views.AntiPodalLocation">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="20">
                 <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
                     <Label Text="Antipodal Locations" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
                 </Frame>
+                <Label x:Name="Location1" Text="Location A" FontSize="Large" TextColor="Blue" BackgroundColor="AliceBlue" />
                 <Entry x:Name="LatDeg1" Text="28" />
                 <Entry x:Name="LatMin1" Text="52" />
                 <Entry x:Name="LatSec1" Text="50" />

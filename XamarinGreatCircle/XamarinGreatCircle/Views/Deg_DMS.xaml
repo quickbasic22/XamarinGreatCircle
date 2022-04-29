@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:XamarinGreatCircle.ViewModels" 
+             x:DataType="viewmodels:Deg_DMS_ViewModel"
              x:Class="XamarinGreatCircle.Views.Deg_DMS">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
                 <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
             </Frame>
@@ -13,6 +15,7 @@
             <Line X1="0" Y1="50" X2="600" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
             <Entry x:Name="EntryLat" Text="" Placeholder="Latitude DMS" />
             <Entry x:Name="EntryLong" Text="" Placeholder="Longitude DMS" />
+            <Picker x:Name="LocationPicker" Title="Pick Location from list" TextColor="Blue" BackgroundColor="LightPink" TitleColor="Purple" ItemsSource="{Binding LocationInformation}" ItemDisplayBinding="{Binding Name}" FontSize="Large" SelectedIndexChanged="LocationPicker_SelectedIndexChanged" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
