@@ -106,5 +106,42 @@ namespace XamarinGreatCircle
             result = result * 3959;
             return result;
         }
+
+        public double CourseBetweenPoints(double latDeg, double lngDeg, double lat2Deg, double lng2Deg)
+        {
+            double lat1Radians = Deg_Radians(latDeg);
+            double lng1Radians = Deg_Radians(lngDeg);
+            double lat2Radians = Deg_Radians(lat2Deg);
+            double lng2Radians = Deg_Radians(lng2Deg);
+
+            double tc1 = 0;
+            double distance = GreatCircle_Calculation(latDeg, lngDeg, lat2Deg, lng2Deg);
+
+            if (Math.Cos(lat1Radians) < 0.00010)
+                if (lat1Radians > 0)
+                    tc1 = Math.PI;
+                else
+                    tc1 = 2 * Math.PI;
+            else if (Math.Sin(lng2Radians - lng1Radians) < 0)
+            {
+                tc1 = Math.Acos((Math.Sin(lat2Radians) - Math.Sin(lat1Radians) * Math.Cos(distance)) / (Math.Sin(distance) * Math.Cos(lat1Radians)));
+            }
+            else
+                tc1 = 2 * Math.PI - Math.Acos((Math.Sin(lat2Radians) - Math.Sin(lat1Radians) * Math.Cos(distance)) / (Math.Sin(distance) * Math.Cos(lat1Radians)));
+            double CourseDegrees = Math.Round(Radians_Deg(tc1), 0);
+
+            return CourseDegrees;
+        }
+
+        public async System.Threading.Tasks.Task<string[]> Get_Cooridates(object sender, EventArgs e)
+        {
+            var coor = await Geolocation.GetLocationAsync(new GeolocationRequest
+            {
+                DesiredAccuracy = GeolocationAccuracy.Medium,
+                Timeout = TimeSpan.FromSeconds(30)
+            });
+            var cooridates = new string[] { coor.Latitude.ToString(), coor.Longitude.ToString() };
+            return cooridates;
+        }
     }
 }

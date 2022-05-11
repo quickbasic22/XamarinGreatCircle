@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:XamarinGreatCircle.ViewModels" 
              x:DataType="viewmodels:Deg_DMS_ViewModel"
-             x:Class="XamarinGreatCircle.Views.Deg_DMS">
+             x:Class="XamarinGreatCircle.Views.Deg_DMS"
+             Title="Degrees to Degress Minute Seconds">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
-                <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
-            </Frame>
-            <Entry x:Name="EntryLatDegrees" Text="" Placeholder="Degrees Latitude" />
-            <Entry x:Name="EntryLongDegrees" Text="" Placeholder="Degrees Longitude" />
-            <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line X1="0" Y1="50" X2="600" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
-            <Entry x:Name="EntryLat" Text="" Placeholder="Latitude DMS" />
-            <Entry x:Name="EntryLong" Text="" Placeholder="Longitude DMS" />
-            <Picker x:Name="LocationPicker" Title="Pick Location from list" TextColor="Blue" BackgroundColor="LightPink" TitleColor="Purple" ItemsSource="{Binding LocationInformation}" ItemDisplayBinding="{Binding Name}" FontSize="Large" SelectedIndexChanged="LocationPicker_SelectedIndexChanged" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+                </Frame>
+                <Entry x:Name="EntryLatDegrees" Text="" Placeholder="Degrees Latitude" />
+                <Entry x:Name="EntryLongDegrees" Text="" Placeholder="Degrees Longitude" />
+                <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
+                <Line X1="0" Y1="50" X2="600" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
+                <Entry x:Name="EntryLat" Text="" Placeholder="Latitude DMS" />
+                <Entry x:Name="EntryLong" Text="" Placeholder="Longitude DMS" />
+                <Picker x:Name="LocationPicker" Title="Pick Location from list" TextColor="Blue" BackgroundColor="LightPink" TitleColor="Purple" ItemsSource="{Binding LocationInformation}" ItemDisplayBinding="{Binding Name}" FontSize="Large" SelectedIndexChanged="LocationPicker_SelectedIndexChanged" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

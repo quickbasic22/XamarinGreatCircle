@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -57,6 +58,18 @@ namespace XamarinGreatCircle.Views
             Longitude2.Text = "";
             Location1.Text = "";
             Location2.Text = "";
+        }
+
+        private async void GetCooridates_Clicked(object sender, EventArgs e)
+        {
+            var coor = await Geolocation.GetLocationAsync(new GeolocationRequest
+            {
+                DesiredAccuracy = GeolocationAccuracy.Best,
+                Timeout = TimeSpan.FromSeconds(1)
+            });
+
+            Latitude1.Text = coor.Latitude.ToString();
+            Longitude1.Text = coor.Longitude.ToString();
         }
     }
 }

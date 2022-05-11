@@ -1,18 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinGreatCircle.Views.Radians_DD">
+             x:Class="XamarinGreatCircle.Views.Radians_DD"
+             Title="Radians to Degrees">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
-                <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
-            </Frame>
-            <Entry x:Name="EntryLatRadians" Text="" Placeholder="Radian Latitude" />
-            <Entry x:Name="EntryLongRadians" Text="" Placeholder="Radian Longitude" />
-            <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
-            <Line X1="0" Y1="50" X2="600" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
-            <Entry x:Name="EntryDegLat" Text="" Placeholder="Latitude DMS" />
-            <Entry x:Name="EntryDegLong" Text="" Placeholder="Longitude DMS" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label Text="DMS to Degrees" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+                </Frame>
+                <Entry x:Name="EntryLatRadians" Text="" Placeholder="Radian Latitude" />
+                <Entry x:Name="EntryLongRadians" Text="" Placeholder="Radian Longitude" />
+                <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" />
+                <Line X1="0" Y1="50" X2="600" Y2="50" Stroke="DarkBlue" StrokeThickness="10" />
+                <Entry x:Name="EntryDegLat" Text="" Placeholder="Latitude DMS" />
+                <Entry x:Name="EntryDegLong" Text="" Placeholder="Longitude DMS" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

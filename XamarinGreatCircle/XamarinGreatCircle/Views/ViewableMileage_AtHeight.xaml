@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinGreatCircle.Views.ViewableMileage_AtHeight">
+             x:Class="XamarinGreatCircle.Views.ViewableMileage_AtHeight"
+             Title="Viewable Milage at a Height">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
-                <Label Text="Viewable  Mileage at height" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
-            </Frame>
-            <Entry x:Name="HeightInFeet" Text="35000" FontSize="Large" />
-            <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" FontSize="Large" />
-           
-            <Label x:Name="ResultsLabel" FontSize="Large" FontFamily="Arial" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                    <Label Text="Viewable  Mileage at height" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+                </Frame>
+                <Entry x:Name="HeightInFeet" Text="35000" FontSize="Large" />
+                <Button x:Name="Calculate" Text="Calculate" Clicked="Calculate_Clicked" FontSize="Large" />
+
+                <Label x:Name="ResultsLabel" FontSize="Large" FontFamily="Arial" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
